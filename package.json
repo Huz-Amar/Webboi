@@ -1,0 +1,24 @@
+{
+  "name": "webboi",
+  "version": "1.0.0",
+  "description": "simple test app",
+  "main": "app.js",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlsKillMe4654/Webboi.git"
+  },
+  "author": "Huzboi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PlsKillMe4654/Webboi/issues"
+  },
+  "homepage": "https://github.com/PlsKillMe4654/Webboi#readme"
+}
