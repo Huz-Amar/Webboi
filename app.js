@@ -1,10 +1,15 @@
 var express = require('express');
 var app = express();
 
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
 // This responds with "Hello World" on the homepage
 app.get('/', function (req, res) {
    console.log("Got a GET request for the homepage");
-   res.send('Hello GET');
+    res.sendFile(path.join(__dirname + '/index.html'));
+   //res.send('Hello GET');
 })
 
 // This responds a POST request for the homepage
