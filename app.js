@@ -7,7 +7,7 @@ const path = require('path');
 
 // This responds with "Hello World" on the homepage
 app.get('/homepage', function (req, res) {
-   console.log("Got a GET request for the homepage");
+    console.log("Got a GET request for the homepage");
     res.sendFile(path.join(__dirname + '/homepage.html'));
 })
 
@@ -38,7 +38,7 @@ app.get('/ab*cd', function(req, res) {
 // IDK
 app.get('/Dan', function(req, res) {   
     console.log("Got a GET request for /Dan");
-    res.send('yeety heety');
+    res.sendFile(path.join(__dirname + '/Dan.html'));
  })
 
 var server = app.listen(3000, function () {
