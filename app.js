@@ -1,18 +1,15 @@
 var express = require('express');
+var expressLayouts = require('express-ejs-layouts');
 var app = express();
+var port = 3000;
 var router = require(__dirname + '/route.js');
+
 app.use('/', router);
-
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
+app.use(express.static(__dirname + '/public'));
 
 
-var server = app.listen(3000, function () {
-
-   var host = server.address().address
-   var port = server.address().port
-
-   console.log("Example app listening at http://%s:%s", host, port)
-})
+app.listen(port, function(){
+    console.log('app.js up and running');
+});

@@ -1,18 +1,19 @@
 //require express
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 module.exports = router;
 
 // This responds with "Hello World" on the homepage
-router.get('/homepage', function (req, res) {
+router.get('/', function (req, res) {
     console.log("Got a GET request for the homepage");
     res.sendFile(path.join(__dirname + '/homepage.html'));
 })
 
 // This responds a GET request for the /list_user page.
-router.get('/list_user', function (req, res) {
-   console.log("Got a GET request for /list_user");
-   res.send('Page Listing');
+router.get('/trial', function (req, res) {
+   console.log("Got a GET request for /trial.html");
+   res.sendFile(path.join(__dirname + '/trial.html'));
 })
 
 // This responds a GET request for abcd, abxcd, ab123cd, and so on
