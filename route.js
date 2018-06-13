@@ -7,13 +7,13 @@ module.exports = router;
 // This responds with "Hello World" on the homepage
 router.get('/', function (req, res) {
     console.log("Got a GET request for the homepage");
-    res.sendFile(path.join(__dirname + '/homepage.html'));
+    res.sendFile(path.join(__dirname + '/index/homepage.html'));
 })
 
 // This responds a GET request for the /list_user page.
 router.get('/trial', function (req, res) {
    console.log("Got a GET request for /trial.html");
-   res.sendFile(path.join(__dirname + '/trial.html'));
+   res.sendFile(path.join(__dirname + '/index/trial.html'));
 })
 
 // This responds a GET request for abcd, abxcd, ab123cd, and so on

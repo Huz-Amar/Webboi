@@ -4,9 +4,11 @@ var app = express();
 var port = 3000;
 var router = require(__dirname + '/route.js');
 
-app.use('/', router);
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
+
+app.use('/', router);
+
 app.use(express.static(__dirname + '/public'));
 
 
