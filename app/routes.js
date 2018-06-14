@@ -9,10 +9,10 @@ router.get('/', function(req, res) {
     res.render('pages/index');
 })
 
-router.get('/about', function(req, res) {
-    res.render('pages/about');
+router.get('/inventory', function(req, res) {
+    res.render('pages/inventory');
 })
 
-router.get('/contact', function(req, res) {
-    res.render('pages/contact');
+router.get('/customer_history', function(req, res) {
+    res.render('pages/customer_history');
 })
