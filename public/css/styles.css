@@ -10,7 +10,7 @@ header .navbar {
 }
 
 .hero {
-	/*background-image: url(../img/planet.jpg);*/
+	background-image: url(../img/pharmacy.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -54,5 +54,5 @@ footer {
 	font-size: 14px;
 	color: #BBB;
 	background: #222;
-	text-allign: center;
+	text-align: center;
 }
