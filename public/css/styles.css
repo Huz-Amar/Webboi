@@ -11,6 +11,15 @@ header .navbar {
 	background-color: rgb(0, 0, 100);
 }
 
+.nav-item {
+	color: #FFF !important;
+}
+
+#subtitle {
+	padding-top: 70px;
+	margin-bottom: 0px;
+}
+
 .hero {
 	background-image: url(../img/pharmacy.jpg);
 	background-repeat: no-repeat;
@@ -23,7 +32,7 @@ header .navbar {
 
 .hero-content {
 	position: absolute;
-	top: 50%;
+	top: 35%;
 	text-align: center;
 	width: 100%;
 }
