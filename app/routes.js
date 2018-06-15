@@ -16,3 +16,4 @@ router.get('/inventory', function(req, res) {
 router.get('/customer_history', function(req, res) {
     res.render('pages/customer_history');
 })
+
