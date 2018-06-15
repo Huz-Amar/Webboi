@@ -1,3 +1,5 @@
+
+
 body {
 	font-size: 16px;
 	line-height: 1.5;
@@ -6,7 +8,7 @@ body {
 header .navbar {
 	border-radius: 0;
 	margin: 0;
-
+	background-color: rgb(0, 0, 100);
 }
 
 .hero {
@@ -35,21 +37,25 @@ header .navbar {
 
 .hero-content h2 span {
 	background-color: rgba(30, 144, 255, 0.50);
-	/*	rgba(red, gree, blue, transparency); */
+	/*	rgba(red, green, blue, transparency); */
 }
 
 .hero-content p {
+/*	padding: 20px;	*/
 	color: #FFF;
 	/* still white */
 	font-size: 40px;
 	margin-bottom: 30px;
 }
 
-.hero-content .btn {
-	border-radius: 2px;
-	padding: 20px 30px;
-	background-color: rgba(30, 144, 255, 0.50);
+.hero-content p span {
+	background-color: rgba(0, 0, 100, 0.50);
+}
 
+.hero-content .btn {
+/*	border-radius: 2px;	*/
+	padding: 20px 30px;
+	background-color: rgb(0, 0, 100);
 }
 
 main {
