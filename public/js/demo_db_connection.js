@@ -1,4 +1,5 @@
 var mysql = require('mysql');
+var path = require('path');
 var sqlCredentials = require(path.join(__dirname, '../../credentials.json'));
 
 var connection = mysql.createConnection({
