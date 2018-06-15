@@ -28,13 +28,19 @@ header .navbar {
 
 .hero-content h2 {
 	color: #FFF;
-	/*Color is black*/
+	text-align: center;
+	/*Color is white */
 	font-size: 80px;
+}
+
+.hero-content h2 span {
+	background-color: rgba(30, 144, 255, 0.50);
+	/*	rgba(red, gree, blue, transparency); */
 }
 
 .hero-content p {
 	color: #FFF;
-	/* still black */
+	/* still white */
 	font-size: 40px;
 	margin-bottom: 30px;
 }
@@ -42,6 +48,8 @@ header .navbar {
 .hero-content .btn {
 	border-radius: 2px;
 	padding: 20px 30px;
+	background-color: rgba(30, 144, 255, 0.50);
+
 }
 
 main {
