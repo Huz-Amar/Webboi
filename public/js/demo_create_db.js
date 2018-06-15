@@ -6,7 +6,7 @@ var con = mysql.createConnection({
   host: "localhost",
   user: sqlCredentials.username,
   password: sqlCredentials.password
-});
+}); 
 
 con.connect(function(err) {
   con.query("CREATE DATABASE pharmac", function (err, result) {
