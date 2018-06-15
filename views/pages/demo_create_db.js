@@ -9,7 +9,7 @@ var con = mysql.createConnection({
 });
 
 con.connect(function(err) {
-  con.query("CREATE DATABASE pharmac", function (err, result) {
+  con.query("CREATE DATABASE mydb", function (err, result) {
     console.log("Database created");
   });
 });
