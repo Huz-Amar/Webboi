@@ -1,12 +1,19 @@
 <%- contentFor('hero') %>
 
+<!--Connecting to a database-->
+
 <!--ALL JS FUNCTIONS GO HERE!!!-->
+
+<script src="codeForInventory.js"></script>
+
 <!--Display information of drugs-->
 <script>
-    function displayText(id){
-        document.getElementById(id).innerHTML = "Aspirin: Good for head oucho boi";
+    function display(id){
+        //document.getElementById(id).innerHTML = "Aspirin: Good for head oucho boi";
+       alert("BOI");
     }
 </script>
+
 <!--Attempt to make an array of buttons like for GUI-->
 <script>
     var listBrand =['LEXUS','AUDI','MAYBACK','FERRARI','TOYOTA'];   
@@ -19,12 +26,14 @@
             document.body.appendChild(btn);
         }
     }
+</script>  
+
 <!--Attemp to format one big document.write()-->
 <script>
     function bigWrite(){
         document.open();
         document.write("<p>Out with the old - in with the new!</br></p>" +
-        "<p>if this works should be ona  enw line </br><p>");
+        "<p>"+"if this works should be ona  enw line" +"</br><p>");
         document.close();
     }
 </script>
@@ -50,7 +59,8 @@
         <div class="text-center">
             <!--<button onclick="displayText('info')">End me</button>-->
             <!--<script>printBtn()</script>-->
-            <script>bigWrite()</script>
+            <!--<script>bigWrite()</script>-->
+            <script>connect()</script>
         </div>
     </div>>
 </main>
