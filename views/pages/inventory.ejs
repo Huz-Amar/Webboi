@@ -1,36 +1,20 @@
-<%- contentFor('hero') %>
-
+<%- contentFor('scripts') %>
 <!--External JS Files-->
 <script src="/js/codeForInventory.js"></script>
-
-<!--Display information of drugs-->
 <script>
-    function display(id){
-        //document.getElementById(id).innerHTML = "Aspirin: Good for head oucho boi";
-       alert("BOI");
-    }
+$("$1").click(extractInfo());
 </script>
 
-<!--Attempt to make an array of buttons like for GUI-->
-<script>
-    var listBrand =['LEXUS','AUDI','MAYBACK','FERRARI','TOYOTA'];   
-    //the array
-    function printBtn() {
-        for (var i = 0; i < listBrand.length; i++) {
-            var btn = document.createElement("button");
-            var t = document.createTextNode(listBrand[i]);
-            btn.appendChild(t);
-            document.body.appendChild(btn);
-        }
-    }
-</script>  
+<%- contentFor('hero') %>
+
+
 
 <!--Attemp to format one big document.write()-->
 <script>
     function bigWrite(){
+        var result = extractInfo();
         document.open();
-        document.write("<p>Out with the old - in with the new!</br></p>" +
-        "<p>"+"if this works should be ona  enw line" +"</br><p>");
+        document.write("<p>" +"Yeet"+ "</br><p>");
         document.close();
     }
 </script>
@@ -40,9 +24,9 @@
 <!--Actual start of html code-->
 <section class="hero">
     <div class="hero-content">
-        <h2>Inventory</h2>
-        <p>Drugs Categorized by Clearance level</p>
-        <a href="javascript:newEntry()" class="btn btn-lg btn-primary">Add + </a>
+        <h2><span>Inventory</span></h2>
+        <p><span>Drugs Categorized by Clearance level</span></p>
+        <!--<a href="javascript:newEntry()" class="btn btn-lg btn-primary">Add + </a>-->
     </div>
 </section>
     
@@ -51,7 +35,8 @@
     <p id="info" align="center">Here we will display information of current selected type a pharmacutical</br></br></p>
     <div class="container">
         <div class="text-center">
-            <button onclick="displayText()">End me</button>
+            <a id ="1" class="btn btn-primary" href="/js/queryName.js">End me</button>
+            
         </div>
     </div>>
 </main>
