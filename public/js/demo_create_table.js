@@ -3,13 +3,13 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "huzaifa147",
-  database: "mydb"
+  password: "password",
+  database: "pharmac"
 });
 
 con.connect(function(err) {
   console.log("Connected!");
-  var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+  var sql = "CREATE TABLE inventory (type CHAR(1), name VARCHAR(255), info VARCHAR(255))";
   con.query(sql, function (err, result) {
     console.log("Table created");
   });
