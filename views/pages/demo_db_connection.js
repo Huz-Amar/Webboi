@@ -7,6 +7,7 @@ var connection = mysql.createConnection({
     database: 'InventoryDB',
 });
 
+
 connection.connect();
 
 // var tool = {
