@@ -1,24 +1,25 @@
 <%- contentFor('scripts') %>
 <!--External JS Files-->
 <script src="/js/codeForInventory.js"></script>
+
 <script>
-$("$1").click(extractInfo());
+function myfunction(){
+    extractInfo();
+    $.getJSON({
+        url: "/js/sverdlovsk.json",
+        success: function(data) {
+            console.log("is this on");
+            console.log(data.name);
+            var bigstring="";
+            //for (var i=0; i<data.length; i++){
+                document.getElementById("stalin").innerHTML = data[0].name;
+            //}   
+        }
+    });
+}
 </script>
 
 <%- contentFor('hero') %>
-
-<!--Attemp to format one big document.write()-->
-<script>
-    function bigWrite(){
-        var result = extractInfo();
-        document.open();
-        document.write("<p>Out with the old - in with the new!</br></p>" +
-        "<p>"+"if this works should be on new line" +"</br><p>");
-        document.close();
-    }
-</script>
-
-<!--WHY NOT JUST DISPLAY BOTH DRUG NAME AND INFO AT SAME TIME???? if so do above bigWrite()-->
 
 <!--Actual start of html code-->
 <section class="hero">
@@ -34,8 +35,9 @@ $("$1").click(extractInfo());
     <p id="info" align="center">Here we will display information of current selected type a pharmacutical</br></br></p>
     <div class="container">
         <div class="text-center">
+            <button onclick="myfunction()">Click me</button>
+            <p id="stalin"></p>
             <!--<a id ="1" class="btn btn-primary" href="/js/queryName.js">End me</button>-->
-            
         </div>
     </div>>
 </main>
