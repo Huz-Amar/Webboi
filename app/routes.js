@@ -9,6 +9,10 @@ router.get('/', function(req, res) {
 	res.render('pages/index');
 })
 
+router.get('/supplier_info', function(req, res) {
+	res.render('pages/supplier_info');
+})
+
 router.get('/inventory', function(req, res) {
 	res.render('pages/inventory');
 })

@@ -1,0 +1,31 @@
+<%- contentFor('scripts') %>
+<!--External JS Files-->
+<script src="/js/codeForSupplier.js"></script>
+
+<%- contentFor('hero') %>
+
+<!--Actual start of html code-->
+<section class="hero">
+    <div class="hero-content">
+        <h2><span>Supplier Info</span></h2>
+        <p><span>Shows the Current Suppliers and their Info</span></p>
+    </div>
+</section>
+    
+<main>
+    <div class = "text-center">    
+        <button onclick="extractInfoA(), extractInfoB(), extractInfoC()" class="btn btn-lg btn-primary">Display Info</button>
+        <!--<p align="center"></br>Here we will display information of current selected type a pharmacutical</br></br></p>-->
+    </div>
+    <div class="container">
+        <div class="text-center">
+            <h1 align = "center">TYPE A</h1>
+            <h3 id="typea"></h3>
+            <h1 align = "center">TYPE B</h1>
+            <h3 id="typeb"></h3>
+            <h1 align = "center">TYPE C</h1>
+            <h3 id="typec"></h3>
+        </div>
+    </div>>
+</main>
+    
