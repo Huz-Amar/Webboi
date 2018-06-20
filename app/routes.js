@@ -32,3 +32,7 @@ router.get('/employees', function(req, res) {
 router.get('/prescription_tickets', function(req, res) {
 	res.render('pages/prescription_tickets');
 })
+
+router.get('/login', function(req, res) {
+	res.render('pages/login');
+})
