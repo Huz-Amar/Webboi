@@ -17,3 +17,14 @@ router.get('/customer_history', function(req, res) {
     res.render('pages/customer_history');
 })
 
+router.get('/client_list', function(req, res) {
+    res.render('pages/client_list');
+})
+
+router.get('/employees', function(req, res) {
+    res.render('pages/employees');
+})
+
+router.get('/prescription_history', function(req, res) {
+    res.render('pages/prescription_history');
+})
