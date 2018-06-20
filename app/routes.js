@@ -6,25 +6,25 @@ var router = express.Router();
 module.exports= router;
 
 router.get('/', function(req, res) {
-    res.render('pages/index');
+	res.render('pages/index');
 })
 
 router.get('/inventory', function(req, res) {
-    res.render('pages/inventory');
+	res.render('pages/inventory');
 })
 
 router.get('/customer_history', function(req, res) {
-    res.render('pages/customer_history');
+	res.render('pages/customer_history');
 })
 
 router.get('/client_list', function(req, res) {
-    res.render('pages/client_list');
+	res.render('pages/client_list');
 })
 
 router.get('/employees', function(req, res) {
-    res.render('pages/employees');
+	res.render('pages/employees');
 })
 
-router.get('/prescription_history', function(req, res) {
-    res.render('pages/prescription_history');
+router.get('/prescription_tickets', function(req, res) {
+	res.render('pages/prescription_tickets');
 })

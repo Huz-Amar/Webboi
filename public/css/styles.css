@@ -5,14 +5,23 @@ body {
 	line-height: 1.5;
 }
 
-header .navbar {
+.table {
+	width: 50%;
+	text-align: center;
+}
+
+#mainNav {
 	border-radius: 0;
 	margin: 0;
 	background-color: rgb(0, 0, 100);
 }
 
-.nav-item {
-	color: #FFF !important;
+.navbar-brand {
+	color: #FFF;
+}
+
+.nav-link {
+	color: #FFF;
 }
 
 #subtitle {
@@ -50,7 +59,7 @@ header .navbar {
 }
 
 .hero-content p {
-/*	padding: 20px;	*/
+	/*	padding: 20px;	*/
 	color: #FFF;
 	/* still white */
 	font-size: 40px;
@@ -62,7 +71,7 @@ header .navbar {
 }
 
 .hero-content .btn {
-/*	border-radius: 2px;	*/
+	/*	border-radius: 2px;	*/
 	padding: 20px 30px;
 	background-color: rgb(0, 0, 100);
 }
