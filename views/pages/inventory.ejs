@@ -2,23 +2,6 @@
 <!--External JS Files-->
 <script src="/js/codeForInventory.js"></script>
 
-<script>
-function myfunction(){
-    extractInfo();
-    $.getJSON({
-        url: "/js/sverdlovsk.json",
-        success: function(data) {
-            console.log("is this on");
-            console.log(data.name);
-            var bigstring="";
-            //for (var i=0; i<data.length; i++){
-                document.getElementById("stalin").innerHTML = data[0].name;
-            //}   
-        }
-    });
-}
-</script>
-
 <%- contentFor('hero') %>
 
 <!--Actual start of html code-->
@@ -26,18 +9,22 @@ function myfunction(){
     <div class="hero-content">
         <h2><span>Inventory</span></h2>
         <p><span>Drugs Categorized by Clearance level</span></p>
-        <!--<a href="javascript:newEntry()" class="btn btn-lg btn-primary">Add + </a>-->
     </div>
 </section>
     
 <main>
-    <p align = "center">TYPE A</p>
-    <p id="info" align="center">Here we will display information of current selected type a pharmacutical</br></br></p>
+    <div class = "text-center">    
+        <button onclick="extractInfo()" class="btn btn-lg btn-primary">Display Info</button>
+        <!--<p align="center"></br>Here we will display information of current selected type a pharmacutical</br></br></p>-->
+    </div>
     <div class="container">
         <div class="text-center">
-            <button onclick="myfunction()">Click me</button>
-            <p id="stalin"></p>
-            <!--<a id ="1" class="btn btn-primary" href="/js/queryName.js">End me</button>-->
+            <h1 align = "center">TYPE A</h1>
+            <p id="typea"></p>
+            <h1 align = "center">TYPE B</h1>
+            <p id="typeb"></p>
+            <h1 align = "center">TYPE C</h1>
+            <p id="typec"></p>
         </div>
     </div>>
 </main>

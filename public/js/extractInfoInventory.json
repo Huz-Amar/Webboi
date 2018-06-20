@@ -1,0 +1,15 @@
+[
+{
+	"name": "Aspirin",
+	"expiration_date": "March 5, 2018",
+	"sale_price": 12.35,
+	"description": "Head Ache Medicine, Dont give to people who bleed easily",
+	"dosage": "Big"
+},
+{
+	"name": "Tylenol",
+	"expiration_date": "June 1, 2022",
+	"sale_price": 11.34,
+	"description": "Its all ok",
+	"dosage": "Small"
+}]

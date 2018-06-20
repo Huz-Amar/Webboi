@@ -7,6 +7,8 @@ var port = 3000;
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
+//const inventory = require('./public/js/codeForInventory');
+
 var router = require('./app/routes');
 app.use('/', router);
 
@@ -16,3 +18,6 @@ app.use(express.static(__dirname + '/public'));
 app.listen(port, function() {
     console.log('up and running');
 })
+
+
+//inventory.getInfo;
