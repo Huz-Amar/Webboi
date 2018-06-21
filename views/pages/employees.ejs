@@ -1,5 +1,7 @@
-<%- contentFor('hero') %>
+<%- contentFor('scripts') %>
+<script src="/js/codeForEmployees.js"></script>
 
+<%- contentFor('hero') %>
 <section class="hero">
 	<div class="hero-content">
 		<h2><span>Employees</span></h2>
@@ -13,6 +15,11 @@
 
 <main>
 
+	<div class = "text-center">    
+        <button onclick="fillTable()" class="btn btn-lg btn-primary">Display Info</button>
+        <!--<p align="center"></br>Here we will display information of current selected type a pharmacutical</br></br></p>-->
+    </div>
+
 	<div class="container">
 		<div class="jumbotron text-center">
 			You are currently logged in as a user
@@ -21,16 +28,22 @@
 	</div>
 
 
+
 	<table class="table" align="center" id="employeeTable">
 		<thead class="thead-dark">
 			<tr>
-				<th scope="col">#</th>
-				<th scope="col">First</th>
-				<th scope="col">Last</th>
-				<th scope="col">Handle</th>
+				<th scope="col">Employee ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Access Level</th>
+				<th scope="col">Supervisor ID</th>
 			</tr>
 		</thead>
 		<tbody>
+
+			<div id="theTableCode">
+
+			</div>
+<!-- 
 			<tr>
 				<th scope="row">1</th>
 				<td>Mark</td>
@@ -48,7 +61,8 @@
 				<td>Larry</td>
 				<td>the Bird</td>
 				<td>@twitter</td>
-			</tr>
+			</tr> -->
+
 		</tbody>
 	</table>
 
