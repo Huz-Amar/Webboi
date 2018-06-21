@@ -1,0 +1,13 @@
+[
+{
+	"employee_id": 1,
+	"user": "JohnDoe",
+	"password": "johndoe",
+	"access_level": "A"
+},
+{
+	"employee_id": 2,
+	"user": "MaxBoi",
+	"password": "maxboi",
+	"access_level": "B"
+}]

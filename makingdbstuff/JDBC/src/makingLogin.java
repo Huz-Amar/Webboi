@@ -13,11 +13,11 @@ import java.util.Scanner;
 // This program allows you to create and manage a store inventory database.
 // It creates a database and datatable, then populates that table with tools from
 // items.txt.
-public class makingInventory {
+public class makingLogin {
 	
 	public Connection jdbc_connection;
 	public Statement statement;
-	public String databaseName = "pharmac", tableName = "inventory_item", dataFile = "inventories.txt";
+	public String databaseName = "pharmac", tableName = "employee", tableName2 = "supervisor", dataFile = "employee.txt", dataFile2 = "supervisor.txt";
 	
 	// Students should configure these variables for their own MySQL environment
 	// If you have not created your first database in mySQL yet, you can leave the 
@@ -26,7 +26,7 @@ public class makingInventory {
 				  login          = "root",
 				  password       = "password";
 
-	public makingInventory()
+	public makingLogin()
 	{
 		try{
 			// If this throws an error, make sure you have added the mySQL connector JAR to the project
@@ -44,12 +44,12 @@ public class makingInventory {
 	public void createTable()
 	{
 		String sql = "CREATE TABLE " + tableName + "(" +
-				     "STOCK_ID INT(4) NOT NULL, " +
-				     "SUPP_NAME VARCHAR(20) NOT NULL, " + 
-				     "CLEARENCE_LEVEL CHAR(1) NOT NULL, " + 
-				     "TYPE VARCHAR(200) NOT NULL, " + 
-				     "AMOUNT INTEGER, " +
-				     "PRIMARY KEY ( STOCK_ID, SUPP_NAME ))";
+				     "EMPLOYEE_ID INT NOT NULL, " +
+				     "NAME VARCHAR(50) NOT NULL, " + 
+				     "USER VARCHAR(50) NOT NULL, " + 
+				     "PASSWORD VARCHAR(50) NOT NULL, " + 
+				     "ACCESS_LEVEL CHAR(1) NOT NULL, " + 
+				     "PRIMARY KEY ( EMPLOYEE_ID ))";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -61,14 +61,16 @@ public class makingInventory {
 		}
 	}
 
-	// Removes the data table from the database (and all the data held within it!)
-	public void removeTable()
+	public void createTable2()
 	{
-		String sql = "DROP TABLE " + tableName;
+		String sql = "CREATE TABLE " + tableName2 + "(" +
+				     "BIG_EMPLOYEE_ID INT NOT NULL, " +
+				     "SUPER_START_DATE VARCHAR(100) NOT NULL, " + 
+				     "PRIMARY KEY ( BIG_EMPLOYEE_ID ))";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
-			System.out.println("Removed Table " + tableName);
+			System.out.println("Created Table " + tableName);
 		}
 		catch(SQLException e)
 		{
@@ -84,11 +86,12 @@ public class makingInventory {
 			while(sc.hasNext())
 			{
 				String toolInfo[] = sc.nextLine().split(";");
-				addItem( new Inventory( Integer.parseInt(toolInfo[0]),
-						                            toolInfo[1],
-						                            toolInfo[2],
-						                            toolInfo[3],
-													Integer.parseInt(toolInfo[4])));
+				addItem( new Employee( 						Integer.parseInt(toolInfo[0]),
+																			toolInfo[1],
+																			toolInfo[2],
+																			toolInfo[3],
+																			toolInfo[4]));
+						                 
 			}
 			sc.close();
 		}
@@ -102,14 +105,52 @@ public class makingInventory {
 		}
 	}
 
-	public void addItem(Inventory tool)
+	public void addItem(Employee tool)
 	{
 		String sql = "INSERT INTO " + tableName +
-				" VALUES ( " + tool.stock_id + ", " + 
-				tool.supplier_name + ", " + 
-				tool.clearence_level + ", " + 
-				tool.type + ", " + 
-				tool.amount + ");";
+				" VALUES ( " + tool.employee_id + ", " + 
+							tool.name + ", " + 
+							tool.user + ", " + 
+							tool.password + ", " + 
+							tool.access_level + ");";
+		try{
+			statement = jdbc_connection.createStatement();
+			statement.executeUpdate(sql);
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void fillTable2()
+	{
+		try{
+			Scanner sc = new Scanner(new FileReader(dataFile2));
+			while(sc.hasNext())
+			{
+				String toolInfo[] = sc.nextLine().split(";");
+				addItem2( new Supervisor( 						Integer.parseInt(toolInfo[0]),
+																			toolInfo[1]));
+						                 
+			}
+			sc.close();
+		}
+		catch(FileNotFoundException e)
+		{
+			System.err.println("File " + dataFile + " Not Found!");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void addItem2(Supervisor tool)
+	{
+		String sql = "INSERT INTO " + tableName2 +
+				" VALUES ( " + tool.employee_id + ", " + 
+							tool.date + ");";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -122,15 +163,18 @@ public class makingInventory {
 	
 	public static void main(String args[])
 	{
-		makingInventory inventory = new makingInventory();
+		makingLogin inventory = new makingLogin();
 		
 		// You should comment this line out once the first database is created (either here or in MySQL workbench)
 		//inventory.createDB();
 
 		inventory.createTable();
+		inventory.createTable2();
 		
 		System.out.println("\nFilling the table with tools");
 		inventory.fillTable();
+		inventory.fillTable2();
+
 
 //		System.out.println("\nTrying to remove the table");
 //		inventory.removeTable();

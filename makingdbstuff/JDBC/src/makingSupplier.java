@@ -13,11 +13,11 @@ import java.util.Scanner;
 // This program allows you to create and manage a store inventory database.
 // It creates a database and datatable, then populates that table with tools from
 // items.txt.
-public class makingInventory {
+public class makingSupplier {
 	
 	public Connection jdbc_connection;
 	public Statement statement;
-	public String databaseName = "pharmac", tableName = "inventory_item", dataFile = "inventories.txt";
+	public String databaseName = "pharmac", tableName = "supplier", dataFile = "supplier.txt";
 	
 	// Students should configure these variables for their own MySQL environment
 	// If you have not created your first database in mySQL yet, you can leave the 
@@ -26,7 +26,7 @@ public class makingInventory {
 				  login          = "root",
 				  password       = "password";
 
-	public makingInventory()
+	public makingSupplier()
 	{
 		try{
 			// If this throws an error, make sure you have added the mySQL connector JAR to the project
@@ -44,12 +44,10 @@ public class makingInventory {
 	public void createTable()
 	{
 		String sql = "CREATE TABLE " + tableName + "(" +
-				     "STOCK_ID INT(4) NOT NULL, " +
-				     "SUPP_NAME VARCHAR(20) NOT NULL, " + 
-				     "CLEARENCE_LEVEL CHAR(1) NOT NULL, " + 
-				     "TYPE VARCHAR(200) NOT NULL, " + 
-				     "AMOUNT INTEGER, " +
-				     "PRIMARY KEY ( STOCK_ID, SUPP_NAME ))";
+				     "SUPPLIER_NAME VARCHAR(255) NOT NULL, " +
+				     "LOCATION VARCHAR(255) NOT NULL, " + 
+				     "PHONE INTEGER, " + 
+				     "PRIMARY KEY ( SUPPLIER_NAME ))";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -84,11 +82,9 @@ public class makingInventory {
 			while(sc.hasNext())
 			{
 				String toolInfo[] = sc.nextLine().split(";");
-				addItem( new Inventory( Integer.parseInt(toolInfo[0]),
+				addItem( new Supplier( 				toolInfo[0],
 						                            toolInfo[1],
-						                            toolInfo[2],
-						                            toolInfo[3],
-													Integer.parseInt(toolInfo[4])));
+													Long.parseLong(toolInfo[2])));
 			}
 			sc.close();
 		}
@@ -102,14 +98,12 @@ public class makingInventory {
 		}
 	}
 
-	public void addItem(Inventory tool)
+	public void addItem(Supplier tool)
 	{
 		String sql = "INSERT INTO " + tableName +
-				" VALUES ( " + tool.stock_id + ", " + 
-				tool.supplier_name + ", " + 
-				tool.clearence_level + ", " + 
-				tool.type + ", " + 
-				tool.amount + ");";
+				" VALUES ( " + tool.supplier_name + ", " + 
+				tool.location + ", " + 
+				tool.phone + ");";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -122,7 +116,7 @@ public class makingInventory {
 	
 	public static void main(String args[])
 	{
-		makingInventory inventory = new makingInventory();
+		makingSupplier inventory = new makingSupplier();
 		
 		// You should comment this line out once the first database is created (either here or in MySQL workbench)
 		//inventory.createDB();

@@ -1,25 +1,25 @@
+<%- contentFor('scripts') %>
+<script src="/js/codeForLogin.js"></script>
+
 <%- contentFor('hero') %>
+
 
 <section class="hero">
 	<div class="hero-content">
 		<h2><span>Login</span></h2>
 		<div id="login_credentials">
 			<span>
-				<form action="/action_page.php">
+				<form action="/action_page.php" onsubmit="return loginCheck()" method="post">
 					<h1><span>Username:</span></h1>
 					<input type="text" name="Username">
 					<br>
 					<h1><span>Password:</span></h1>
 					<input type="password" name="Password">
 					<br><br>
-					<input type="submit" value="Submit">
+					<input type="submit" value="Submit" class="btn btn-lg btn-primary">
 				</form>
 			</span>
 		</div>
-	<!--
-        <a href="/inventory" class="btn btn-lg btn-primary">Check Stock</a>
-		<a href="/customer_history" class="btn btn-lg btn-primary">See History</a>
-	-->
 </div>
 </section>
 
@@ -27,7 +27,7 @@
 
 	<div class="container">
 		<div class="jumbotron text-center">
-			You are currently logged in as a user
+			Login Page
 		</div>
 	</div>
 

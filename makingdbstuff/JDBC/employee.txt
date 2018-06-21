@@ -1,0 +1,2 @@
+1;"John Doe";"JohnDoe";"johndoe";"A"
+2;"Max Boi";"MaxBoi";"maxboi";"B"

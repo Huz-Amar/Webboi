@@ -13,11 +13,11 @@ import java.util.Scanner;
 // This program allows you to create and manage a store inventory database.
 // It creates a database and datatable, then populates that table with tools from
 // items.txt.
-public class makingPharm {
+public class makingPerscriptionTicket {
 	
 	public Connection jdbc_connection;
 	public Statement statement;
-	public String databaseName = "pharmac", tableName = "supplier", dataFile = "supplier.txt";
+	public String databaseName = "pharmac", tableName = "perscription_ticket_contains", dataFile = "perscription_contains.txt";
 	
 	// Students should configure these variables for their own MySQL environment
 	// If you have not created your first database in mySQL yet, you can leave the 
@@ -26,7 +26,7 @@ public class makingPharm {
 				  login          = "root",
 				  password       = "password";
 
-	public makingPharm()
+	public makingPerscriptionTicket()
 	{
 		try{
 			// If this throws an error, make sure you have added the mySQL connector JAR to the project
@@ -44,13 +44,10 @@ public class makingPharm {
 	public void createTable()
 	{
 		String sql = "CREATE TABLE " + tableName + "(" +
-				     "PHARM_ID INT(4) NOT NULL, " +
-				     "NAME VARCHAR(20) NOT NULL, " + 
-				     "EXPIRATION_DATE VARCHAR(200) NOT NULL, " + 
-				     "SALE_PRICE DOUBLE(5,2) NOT NULL, " + 
-				     "DESCRIPTION VARCHAR(255) NOT NULL, " +
-				     "DOSAGE VARCHAR(30) NOT NULL, "+
-				     "PRIMARY KEY ( PHARM_ID ))";
+				     "PERSCRIPTION_TICKET INT(4) NOT NULL, " +
+				     "INVENTORY_STOCK_ID INT(4) NOT NULL, " + 
+				     "AMOUNT INTEGER NOT NULL, " + 
+				     "PRIMARY KEY ( PERSCRIPTION_TICKET ))";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -85,12 +82,10 @@ public class makingPharm {
 			while(sc.hasNext())
 			{
 				String toolInfo[] = sc.nextLine().split(";");
-				addItem( new Pharmaceutical( Integer.parseInt(toolInfo[0]),
-						                            toolInfo[1],
-						                            toolInfo[2],
-						                            toolInfo[3],
-						          					toolInfo[4],
-													toolInfo[5]));
+				addItem( new PerscriptionTicket( 			Integer.parseInt(toolInfo[0]),
+															Integer.parseInt(toolInfo[1]),
+															Integer.parseInt(toolInfo[2])));
+						                 
 			}
 			sc.close();
 		}
@@ -104,15 +99,12 @@ public class makingPharm {
 		}
 	}
 
-	public void addItem(Pharmaceutical tool)
+	public void addItem(PerscriptionTicket tool)
 	{
 		String sql = "INSERT INTO " + tableName +
-				" VALUES ( " + tool.stock_id + ", " + 
-				tool.name + ", " + 
-				tool.expiration_date + ", " + 
-				tool.sale_price + ", " + 
-				tool.description + ", "+
-				tool.dosage + ");";
+				" VALUES ( " + tool.ticket_number + ", " + 
+							tool.stock_id + ", " + 
+							tool.amount + ");";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -125,7 +117,7 @@ public class makingPharm {
 	
 	public static void main(String args[])
 	{
-		makingSupplier inventory = new makingSupplier();
+		makingPerscriptionTicket inventory = new makingPerscriptionTicket();
 		
 		// You should comment this line out once the first database is created (either here or in MySQL workbench)
 		//inventory.createDB();
