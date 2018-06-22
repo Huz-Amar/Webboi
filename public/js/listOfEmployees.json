@@ -18,5 +18,12 @@
 		"name": "Chikens Have Fingers",
 		"access_level": "A",
 		"superID": 555
+	},
+
+	{
+		"employeeID": 567,
+		"name": "Butter Duck",
+		"access_level": "C",
+		"superID": 420
 	}
 ]

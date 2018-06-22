@@ -33,25 +33,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% results.forEach(function (patient) { %>
+				<% employees.forEach(function (emp) { %>
 				<tr>
 					<td>
-						<%= patient.healthcarenum %>
+						<%= emp.employeeID %>
 					</td>
 					<td>
-						<%= patient.fname %>
+						<%= emp.name %>
 					</td>
 					<td>
-						<%= patient.mname %>
+						<%= emp.access_level %>
 					</td>
 					<td>
-						<%= patient.lname %>
-					</td>
-					<td>
-						<%= patient.sex %>
-					</td>
-					<td>
-						<%= patient.email %>
+						<%= emp.superID %>
 					</td>
 				</tr>
 				<% }) %>
