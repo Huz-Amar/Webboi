@@ -1,3 +1,5 @@
+//DEAD CODE DOESN'T WORK OUTDATE AND VERY BIG SAD
+
 function fillTable(){
 	$.getJSON({
 		url: "/js/listOfEmployees.json",

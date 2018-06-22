@@ -12,27 +12,33 @@ router.get('/', function(req, res) {
 
 
 
+// NEED TABLE
 router.get('/supplier_info', function(req, res) {
 	res.render('pages/supplier_info');
 })
 
 
 
+// NEED TABLE
 router.get('/inventory', function(req, res) {
 	res.render('pages/inventory');
 })
 
 
 
+// NEED TABLE
 router.get('/customer_history', function(req, res) {
 	res.render('pages/customer_history');
 })
 
 
 
+const cTable = require('../public/js/listofClients.json');
+
 router.get('/client_list', function(req, res) {
-	res.render('pages/client_list');
+	res.render('pages/client_list', {clients: cTable});
 })
+
 
 
 // temp wip stuff
@@ -47,6 +53,7 @@ router.get('/employees', function(req, res) {
 
 
 
+// NEED TABLE
 router.get('/prescription_tickets', function(req, res) {
 	res.render('pages/prescription_tickets');
 })
