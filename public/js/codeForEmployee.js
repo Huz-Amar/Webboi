@@ -31,8 +31,8 @@ function fillTable(){
 				// [i][3] is Super_ID
 				r[++j] = '</td></tr>';*/
 			} 
-
 			document.getElementById("theTableCode").innerHTML = tableCode;
+			
 		}
 	});
 }

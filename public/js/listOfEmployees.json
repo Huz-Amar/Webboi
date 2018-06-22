@@ -4,14 +4,14 @@
 		"name": "Daniel Guieb",
 		"access_level": "A",
 		"superID": 789
-	}
+	},
 
 	{
 		"employeeID": 111,
 		"name": "Chicken Snout",
 		"access_level": "B",
 		"superID": 999
-	}
+	},
 
 	{
 		"employeeID": 444,
