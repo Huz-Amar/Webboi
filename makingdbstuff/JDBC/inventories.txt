@@ -1,2 +1,3 @@
 1000;"Shoppers";"A";"Tablet";50
 1005;"MegaCorp";"B";"Pills";3
+1010;"Staples";"C";"Printer Paper";100
