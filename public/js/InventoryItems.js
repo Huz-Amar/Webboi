@@ -19,12 +19,12 @@ connection.query(sql, function (err, result){
     var stringboi = "[\n"
     var lasti = result.length-1;
     for (var i=0; i<result.length-1; i++){
-        stringboi += JSON.stringify({Stock_ID: result[i].STOCK_ID, Supp_Name: result[i].SUPP_NAME, Inventory_Type: result[i].TYPE, Amount: result[i].Amount}, null, "\t");
+        stringboi += JSON.stringify({Stock_ID: result[i].STOCK_ID, Supp_Name: result[i].SUPP_NAME, Inventory_Type: result[i].TYPE, Amount: result[i].AMOUNT}, null, "\t");
         stringboi += ",\n";
     }
-    stringboi += JSON.stringify({Stock_ID: result[lasti].STOCK_ID, Supp_Name: result[lasti].SUPP_NAME, Inventory_Type: result[lasti].TYPE, Amount: result[lasti].Amount}, null, "\t");
+    stringboi += JSON.stringify({Stock_ID: result[lasti].STOCK_ID, Supp_Name: result[lasti].SUPP_NAME, Inventory_Type: result[lasti].TYPE, Amount: result[lasti].AMOUNT}, null, "\t");
     stringboi += "]";
-    fs.writeFile("InventoryItem.json", stringboi, finished);
+    fs.writeFile("inventoryItems.json", stringboi, finished);
     function finished(err){
         console.log("all set");
     }
