@@ -1,12 +1,10 @@
+//DEAD CODE DOESN'T WORK OUTDATE AND VERY BIG SAD
+
 function fillTable(){
 	$.getJSON({
 		url: "/js/listOfEmployees.json",
 		success: function(data) {
-			var tableCode = "";
-			var stringArray = new Array(), j = -1;
-			for (var i=0; i<data.length; i++){
-				stringArray[i] = "";
-			}
+			var tableCode = "", j = -1;
 
 			for (var i=0; i<data.length; i++){
 
