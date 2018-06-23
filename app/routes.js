@@ -8,7 +8,7 @@ module.exports= router;
 
 router.get('/', function(req, res) {
 	res.render('pages/index');
-}es
+})
 
 const supInfoTable = require('../public/js/sInfo.json');
 
