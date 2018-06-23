@@ -14,11 +14,7 @@
 	<div class="hero-content">
 		<h2><span>Employees</span></h2>
 		<p> <span>Staff review</span></p>
-	<!--
-        <a href="/inventory" class="btn btn-lg btn-primary">Check Stock</a>
-		<a href="/customer_history" class="btn btn-lg btn-primary">See History</a>
-	-->
-</div>
+	</div>
 </section>
 
 <main>
@@ -36,16 +32,16 @@
 				<% employees.forEach(function (emp) { %>
 				<tr>
 					<td>
-						<%= emp.employeeID %>
+						<%= emp.Employee_ID %>
 					</td>
 					<td>
-						<%= emp.name %>
+						<%= emp.Emp_Name %>
 					</td>
 					<td>
-						<%= emp.access_level %>
+						<%= emp.Access_Level %>
 					</td>
 					<td>
-						<%= emp.superID %>
+						<%= emp.Super_ID %>
 					</td>
 				</tr>
 				<% }) %>
