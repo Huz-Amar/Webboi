@@ -1,0 +1,56 @@
+<%- contentFor('css') %>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+
+<%- contentFor('scripts') %>
+<script src="//cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<script>
+	$(document).ready( function () {
+		$('#mH').DataTable();
+	} );
+</script>
+
+<%- contentFor('hero') %>
+<section class="hero">
+	<div class="hero-content">
+		<h2><span>Medical History</span></h2>
+		<p> <span>Search by Client ID</span></p>
+	</div>
+</section>
+
+<main>
+	<div style="padding-top: 40px">
+		<table id="mH" class="table table-striped table-border">
+			<thead>
+				<tr>
+					<th>Client ID</th>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Date of Diagnosis</th>
+					<th>Cause</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% mHist.forEach(function (mH) { %>
+				<tr>
+					<td>
+						<%= mH.C_ID %>
+					</td>
+					<td>
+						<%= mH.Condition_Name %>
+					</td>
+					<td>
+						<%= mH.Condition_Type %>
+					</td>
+					<td>
+						<%= mH.Date_of_Diagonosis %>
+					</td>
+					<td>
+						<%= mH.Cause %>
+					</td>
+				</tr>
+				<% }) %>
+			</tbody>
+		</table>
+	</div>
+
+</main>

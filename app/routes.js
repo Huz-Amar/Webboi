@@ -62,6 +62,20 @@ router.get('/prescription_tickets', function(req, res) {
 
 
 
+const pHTable = require('../public/js/prescriptionHistory.json');
+
+router.get('/pHistory', function(req, res) {
+	res.render('pages/pHistory', {pHist: pHTable})
+})
+
+const mHTable = require('../public/js/medicalHistory.json');
+
+router.get('/mHistory', function(req, res) {
+	res.render('pages/mHistory', {mHist: mHTable})
+})
+
+
+
 router.get('/login', function(req, res) {
 	res.render('pages/login');
 })
