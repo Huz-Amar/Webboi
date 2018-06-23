@@ -1,0 +1,15 @@
+[
+{
+	"Suppstock_ID": 1000,
+	"Supp_Delivery_Name": "Shoppers",
+	"Delivery_Date": "March 1, 1974",
+	"Delivery_Price": 141.43,
+	"Delivery_Amount": 90
+},
+{
+	"Suppstock_ID": 1005,
+	"Supp_Delivery_Name": "MegaCorp",
+	"Delivery_Date": "June 1, 1930",
+	"Delivery_Price": 3343.33,
+	"Delivery_Amount": 7
+}]
