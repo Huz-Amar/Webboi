@@ -5,43 +5,51 @@
 <script src="//cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" charset="utf-8"></script>
 <script>
     $(document).ready( function () {
-        $('#inventory').DataTable();
+        $('#pharms').DataTable();
     } );
 </script>
 
 <%- contentFor('hero') %>
 <section class="hero">
     <div class="hero-content">
-        <h2><span>Inventory</span></h2>
-        <p> <span>Non-pharmaceutical items</span></p>
+        <h2><span>Pharmaceuticals</span></h2>
+        <p> <span>Drugs are categorized by clearance level</span></p>
     </div>
 </section>
 
 <main>
     <div style="padding-top: 40px">
-        <table id="inventory" class="table table-striped table-border">
+        <table id="pharms" class="table table-striped table-border">
             <thead>
                 <tr>
-                    <th>Stock ID</th>
-                    <th>Supplied By</th>
-                    <th>Inventory Type</th>
-                    <th>Amount</th>
+                    <th>Pharmaceutical ID</th>
+                    <th>Name</th>
+                    <th>Expiration Date</th>
+                    <th>Sale Price</th>
+                    <th>Description</th>
+                    <th>Dosage</th>
                 </tr>
             </thead>
             <tbody>
-                <% inV.forEach(function (item) { %>
+                <% drugs.forEach(function (p) { %>
                 <tr>
                     <td>
-                        <%= item.Stock_ID %>
+                        <%= p.Stock_ID %>
                     </td>
                     <td>
-                        <%= item.Supp_Name %>
+                        <%= p.Pharm_Name %>
                     </td>
                     <td>
-                        <%= item.Inventory_Type %>
+                        <%= p.Pharm_Expiration_Date %>
                     </td>
                     <td>
-                        <%= item.Amount %>
+                        <%= p.Sale_Price %>
+                    </td>
+                    <td>
+                        <%= p.Description %>
+                    </td>
+                    <td>
+                        <%= p.Dosage %>
                     </td>
                 </tr>
                 <% }) %>

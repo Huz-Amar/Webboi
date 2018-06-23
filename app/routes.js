@@ -20,11 +20,20 @@ router.get('/supplier_info', function(req, res) {
 
 
 
+const inv = require('../public/js/inventoryItems.json');
+
 router.get('/inventory', function(req, res) {
-	res.render('pages/inventory');
+	res.render('pages/inventory', {inV: inv});
 })
 
 
+
+
+const pharms = require('../public/js/pharmaceuticalStuff.json');
+
+router.get('/pharmaceutical', function(req, res){
+	res.render('pages/pharmaceutical', {drugs: pharms})
+})
 
 /*const cHistoryTable // = require('../public/js/STUFF');*/
 
