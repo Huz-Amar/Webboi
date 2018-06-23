@@ -13,12 +13,12 @@ import java.util.Scanner;
 // This program allows you to create and manage a store inventory database.
 // It creates a database and datatable, then populates that table with tools from
 // items.txt.
-public class makingLogin {
+public class makingClients {
 	
 	public Connection jdbc_connection;
 	public Statement statement;
-	public String databaseName = "pharmac", tableName = "employee", tableName2 = "supervisor", tableName3 = "staff", dataFile = "employee.txt", dataFile2 = "supervisor.txt",
-			dataFile3 = "staff.txt";
+	public String databaseName = "pharmac", tableName = "client", tableName2 = "adult", tableName3 = "minor", tableName4 = "treats", dataFile = "Client.txt", dataFile2 = "adult.txt"
+				,dataFile3 = "minor.txt", dataFile4 = "treats.txt";
 	
 	// Students should configure these variables for their own MySQL environment
 	// If you have not created your first database in mySQL yet, you can leave the 
@@ -27,7 +27,7 @@ public class makingLogin {
 				  login          = "root",
 				  password       = "password";
 
-	public makingLogin()
+	public makingClients()
 	{
 		try{
 			// If this throws an error, make sure you have added the mySQL connector JAR to the project
@@ -45,12 +45,14 @@ public class makingLogin {
 	public void createTable()
 	{
 		String sql = "CREATE TABLE " + tableName + "(" +
-				     "EMPLOYEE_ID INT NOT NULL, " +
-				     "NAME VARCHAR(50) NOT NULL, " + 
-				     "USER VARCHAR(50) NOT NULL, " + 
-				     "PASSWORD VARCHAR(50) NOT NULL, " + 
-				     "ACCESS_LEVEL CHAR(1) NOT NULL, " + 
-				     "PRIMARY KEY ( EMPLOYEE_ID ))";
+				     "CLIENT_ID INT NOT NULL, " +
+				     "CLIENT_NAME VARCHAR(50) NOT NULL, " + 
+				     "AGE INTEGER NOT NULL, " + 
+				     "SEX CHAR(1) NOT NULL, " + 
+				     "WEIGHT VARCHAR(255) NOT NULL, " + 
+				     "ADDRESS VARCHAR(255) , " + 				     
+				     "PHONE INTEGER NOT NULL, " + 
+				     "PRIMARY KEY ( CLIENT_ID, CLIENT_NAME ))";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -65,13 +67,13 @@ public class makingLogin {
 	public void createTable2()
 	{
 		String sql = "CREATE TABLE " + tableName2 + "(" +
-				     "BIG_EMPLOYEE_ID INT NOT NULL, " +
-				     "SUPER_START_DATE VARCHAR(100) NOT NULL, " + 
-				     "PRIMARY KEY ( BIG_EMPLOYEE_ID ))";
+				     "C_ID INT NOT NULL, " +
+				     "LEVEL_OF_ACTIVITY VARCHAR(100) NOT NULL, " + 
+				     "PRIMARY KEY ( C_ID ))";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
-			System.out.println("Created Table " + tableName);
+			System.out.println("Created Table " + tableName2);
 		}
 		catch(SQLException e)
 		{
@@ -81,14 +83,33 @@ public class makingLogin {
 	
 	public void createTable3()
 	{
-		String sql = "CREATE TABLE " + tableName3 + "(" +
-				     "EMP_ID INT NOT NULL, " +
-				     "SUPER_ID INT NOT NULL, " + 
-				     "PRIMARY KEY ( EMP_ID ))";
+		String sql = "CREATE TABLE " + tableName3+ "(" +
+				     "MINOR_CLIENT_ID INT NOT NULL, " +
+				     "ADULT_CLIENT_ID INT NOT NULL, " +
+				     "RELATIONSHIP VARCHAR(100) NOT NULL, " + 
+				     "PRIMARY KEY ( MINOR_CLIENT_ID ))";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
-			System.out.println("Created Table " + tableName);
+			System.out.println("Created Table " + tableName3);
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void createTable4()
+	{
+		String sql = "CREATE TABLE " + tableName4+ "(" +
+				     "C_ID INT NOT NULL, " +
+				     "COND_NAME VARCHAR(255) NOT NULL, " +
+				     "P_ID INTEGER(4) NOT NULL, " + 
+				     "PRIMARY KEY ( C_ID ))";
+		try{
+			statement = jdbc_connection.createStatement();
+			statement.executeUpdate(sql);
+			System.out.println("Created Table " + tableName3);
 		}
 		catch(SQLException e)
 		{
@@ -104,11 +125,13 @@ public class makingLogin {
 			while(sc.hasNext())
 			{
 				String toolInfo[] = sc.nextLine().split(";");
-				addItem( new Employee( 						Integer.parseInt(toolInfo[0]),
+				addItem( new Client( 						Integer.parseInt(toolInfo[0]),
 																			toolInfo[1],
-																			toolInfo[2],
+															Integer.parseInt(toolInfo[2]),
 																			toolInfo[3],
-																			toolInfo[4]));
+																			Double.parseDouble(toolInfo[4]),
+																			toolInfo[5],
+																			Integer.parseInt(toolInfo[6])));
 						                 
 			}
 			sc.close();
@@ -123,14 +146,16 @@ public class makingLogin {
 		}
 	}
 
-	public void addItem(Employee tool)
+	public void addItem(Client tool)
 	{
 		String sql = "INSERT INTO " + tableName +
-				" VALUES ( " + tool.employee_id + ", " + 
-							tool.name + ", " + 
-							tool.user + ", " + 
-							tool.password + ", " + 
-							tool.access_level + ");";
+				" VALUES ( " + tool.client_id + ", " + 
+							tool.client_name + ", " + 
+							tool.age + ", " + 
+							tool.sex + ", " + 
+							tool.weight + ", " + 
+							tool.address + ", " + 
+							tool.number + ");";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -148,7 +173,7 @@ public class makingLogin {
 			while(sc.hasNext())
 			{
 				String toolInfo[] = sc.nextLine().split(";");
-				addItem2( new Supervisor( 						Integer.parseInt(toolInfo[0]),
+				addItem2( new Adult( 						Integer.parseInt(toolInfo[0]),
 																			toolInfo[1]));
 						                 
 			}
@@ -164,11 +189,11 @@ public class makingLogin {
 		}
 	}
 
-	public void addItem2(Supervisor tool)
+	public void addItem2(Adult tool)
 	{
 		String sql = "INSERT INTO " + tableName2 +
-				" VALUES ( " + tool.employee_id + ", " + 
-							tool.date + ");";
+				" VALUES ( " + tool.id + ", " + 
+							tool.levelofactivity + ");";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -186,8 +211,9 @@ public class makingLogin {
 			while(sc.hasNext())
 			{
 				String toolInfo[] = sc.nextLine().split(";");
-				addItem3( new Staff( 						Integer.parseInt(toolInfo[0]),
-																Integer.parseInt(toolInfo[1])));
+				addItem3( new Minor( 						Integer.parseInt(toolInfo[0]),
+															Integer.parseInt(toolInfo[1]),
+																			toolInfo[2]));
 						                 
 			}
 			sc.close();
@@ -202,11 +228,52 @@ public class makingLogin {
 		}
 	}
 
-	public void addItem3(Staff tool)
+	public void addItem3(Minor tool)
 	{
 		String sql = "INSERT INTO " + tableName3 +
-				" VALUES ( " + tool.emp_id + ", " + 
-							tool.super_id + ");";
+				" VALUES ( " + tool.minorclientid + ", " + 
+								tool.adultclientid + ", " + 
+							tool.relationship + ");";
+		try{
+			statement = jdbc_connection.createStatement();
+			statement.executeUpdate(sql);
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void fillTable4()
+	{
+		try{
+			Scanner sc = new Scanner(new FileReader(dataFile4));
+			while(sc.hasNext())
+			{
+				String toolInfo[] = sc.nextLine().split(";");
+				addItem4( new Treats( 						Integer.parseInt(toolInfo[0]),
+															toolInfo[1],
+															Integer.parseInt(toolInfo[2])));
+						                 
+			}
+			sc.close();
+		}
+		catch(FileNotFoundException e)
+		{
+			System.err.println("File " + dataFile4 + " Not Found!");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void addItem4(Treats tool)
+	{
+		String sql = "INSERT INTO " + tableName4 +
+				" VALUES ( " + tool.c_id + ", " + 
+								tool.cond_name + ", " + 
+							tool.p_id + ");";
 		try{
 			statement = jdbc_connection.createStatement();
 			statement.executeUpdate(sql);
@@ -219,20 +286,21 @@ public class makingLogin {
 	
 	public static void main(String args[])
 	{
-		makingLogin inventory = new makingLogin();
+		makingClients inventory = new makingClients();
 		
 		// You should comment this line out once the first database is created (either here or in MySQL workbench)
 		//inventory.createDB();
 
 //		inventory.createTable();
 //		inventory.createTable2();
-		inventory.createTable3();
+//		inventory.createTable3();
+		inventory.createTable4();
 		
 		System.out.println("\nFilling the table with tools");
 //		inventory.fillTable();
 //		inventory.fillTable2();
-		inventory.fillTable3();
-
+//		inventory.fillTable3();
+		inventory.fillTable4();
 
 //		System.out.println("\nTrying to remove the table");
 //		inventory.removeTable();

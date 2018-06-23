@@ -1,11 +1,13 @@
 [
 {
+	"name": "John Doe",
 	"employee_id": 1,
 	"user": "JohnDoe",
 	"password": "johndoe",
 	"access_level": "A"
 },
 {
+	"name": "Max Boi",
 	"employee_id": 2,
 	"user": "MaxBoi",
 	"password": "maxboi",
