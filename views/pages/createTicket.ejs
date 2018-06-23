@@ -1,16 +1,44 @@
 <%- contentFor('scripts') %>
 <script src="/js/makingPrescription.js"></script>
-
+<script>
+    function makingPrescriptions(){
+        makePrescription( document.getElementById('ticketnumber').value, document.getElementById('employeeid').value, 
+            document.getElementById('clientid').value, document.getElementById('date_perscribed').value, document.getElementById('time_of_usage') );
+        makePrescriptionTicket ( document.getElementById('perscription_ticket'), document.getElementById('inventory_stock'), document.getElementById('amount'));
+    }
+</script>
 <%- contentFor('hero') %>
 
 <section class="hero">
 	<div class="hero-content">
-		<h2><span>Create a ticket for a client</span></h2>
+        <h2><span>Create a ticket for a client</span></h2>
+        
 	</div>
 </section>
 
 <main>
     <div class="container">
+            <div id="makingaticket" >
+                    <span>
+                        <h1><span>Ticket Number:</span></h1>
+                        <input type="text" id="ticketnumber" name="ticketnumber"></input>
+                        <h1><span>Employee ID:</span></h1>
+                        <input type="type" id="employeeid" name="employeeid"></input>
+                        <h1><span>CLIENT ID:</span></h1>
+                        <input type="type" id="clientid" name="clientid"></input>
+                        <h1><span>DATE:</span></h1>
+                        <input type="type" id="date_perscribed" name="date_perscribed"></input>
+                        <h1><span>TIME_OF_USAGE:</span></h1>
+                        <input type="type" id="time_of_usage" name="time_of_usage"></input>
+                        <h1><span>PERSCRIPTION_TICKET:</span></h1>
+                        <input type="type" id="perscription_ticket" name="perscription_ticket"></input>
+                        <h1><span>INVENTORY_STOCK_ID:</span></h1>
+                        <input type="type" id="inventory_stock" name="inventory_stock"></input>
+                        <h1><span>AMOUNT:</span></h1>
+                        <input type="type" id="amount" name="amount"></input>
+                        <h2><input type="submit" onclick="makingPrescriptions()" name="Make Prescription" class="btn btn-lg btn-primary"></input></h2>
+                    </span>
+                </div>
 		<div class="jumbotron text-center" id="Username">
 		</div>
 	</div>
