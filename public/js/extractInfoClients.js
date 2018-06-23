@@ -12,19 +12,19 @@ var connection = mysql.createConnection({
 connection.connect();
 
 //exports.getInfo = function(req, res){
-var sql = "SELECT * FROM employee"
+var sql = "SELECT * FROM pharmaceutical, inventory_item WHERE CLEARENCE_LEVEL='A' AND STOCK_ID=PHARM_ID";
 connection.query(sql, function (err, result){
     //console.log(JSON.stringify(result[0].TOOLNAME));
     var fs = require('fs');
     var stringboi = "[\n"
     var lasti = result.length-1;
     for (var i=0; i<result.length-1; i++){
-        stringboi += JSON.stringify({name: result[i].NAME, employee_id: result[i].EMPLOYEE_ID, user: result[i].USER, password: result[i].PASSWORD, access_level: result[i].ACCESS_LEVEL}, null, "\t");
+        stringboi += JSON.stringify({name: result[i].NAME, expiration_date: result[i].EXPIRATION_DATE, description: result[i].DESCRIPTION, amount: result[i].AMOUNT}, null, "\t");
         stringboi += ",\n";
     }
-    stringboi += JSON.stringify({name: result[lasti].NAME, employee_id: result[lasti].EMPLOYEE_ID, user: result[lasti].USER, password: result[lasti].PASSWORD, access_level: result[lasti].ACCESS_LEVEL}, null, "\t");
+    stringboi += JSON.stringify({name: result[lasti].NAME, expiration_date: result[lasti].EXPIRATION_DATE,description: result[lasti].DESCRIPTION, amount: result[i].AMOUNT}, null, "\t");
     stringboi += "]";
-    fs.writeFile("extractLoginInfo.json", stringboi, finished);
+    fs.writeFile("extractInfoInventoryA.json", stringboi, finished);
     function finished(err){
         console.log("all set");
     }

@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 connection.connect();
 
 //exports.getInfo = function(req, res){
-var sql = "SELECT * FROM perscription_ticket, perscription_ticket_contains, inventory_item, pharmaceutical WHERE "
+var sql = "SELECT * FROM perscription_ticket_contains, pharmaceutical, perscription_ticket WHERE CLEARENCE_LEVEL='A' AND STOCK_ID=PHARM_ID "
 connection.query(sql, function (err, result){
     //console.log(JSON.stringify(result[0].TOOLNAME));
     var fs = require('fs');

@@ -1,0 +1,2 @@
+0;"Aspergers Syndrome";1000
+1;"Depression";1005
