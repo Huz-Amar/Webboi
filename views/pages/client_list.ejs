@@ -14,20 +14,17 @@
 	<div class="hero-content">
 		<h2><span>Client List</span></h2>
 		<p> <span>Previous Clients</span></p>
-	<!--
-        <a href="/inventory" class="btn btn-lg btn-primary">Check Stock</a>
-		<a href="/customer_history" class="btn btn-lg btn-primary">See History</a>
-	-->
-</div>
+
+	</div>
 </section>
 
-<div class="container">
-	<div class="jumbotron text-center">
-		All previous clients listed
-	</div>
-</div>
 
 <main>
+	<div align="center">
+		<a href="/pHistory" class="btn btn-lg btn-primary">See Prescription Histories</a>
+		<a href="/mHistory" class="btn btn-lg btn-primary">See Medical Histories</a>
+	</div>
+
 	<div style="padding-top: 40px">
 		<table id="clientTable" class="table table-striped table-border">
 			<thead>
@@ -65,4 +62,6 @@
 				<% }) %>
 			</tbody>
 		</table>
-	</main>
+	</div>
+	
+</main>
