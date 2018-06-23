@@ -8,9 +8,7 @@ module.exports= router;
 
 router.get('/', function(req, res) {
 	res.render('pages/index');
-})
-
-
+}es
 
 const supInfoTable = require('../public/js/sInfo.json');
 
@@ -32,6 +30,13 @@ router.get('/inventory', function(req, res) {
 	res.render('pages/inventory', {inV: inv});
 })
 
+
+
+const shipments = require('../public/js/deliveries.json');
+
+router.get('/supplierDeliveries', function(req, res) {
+	res.render('pages/supplierDeliveries', {packages: shipments});
+})
 
 
 

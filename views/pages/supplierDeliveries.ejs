@@ -1,0 +1,56 @@
+<%- contentFor('css') %>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+
+<%- contentFor('scripts') %>
+<script src="//cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<script>
+	$(document).ready( function () {
+		$('#delivs').DataTable();
+	} );
+</script>
+
+<%- contentFor('hero') %>
+<section class="hero">
+	<div class="hero-content">
+		<h2><span>Supplier Deliveries</span></h2>
+		<p> <span>Information on deliveries</span></p>
+	</div>
+</section>
+
+<main>
+	<div style="padding-top: 40px">
+		<table id="delivs" class="table table-striped table-border">
+			<thead>
+				<tr>
+					<th>Stock ID</th>
+					<th>Supplier</th>
+					<th>Delivery Date</th>
+					<th>Price</th>
+					<th>Amount</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% packages.forEach(function (shipment) { %>
+				<tr>
+					<td>
+						<%= shipment.Suppstock_ID %>
+					</td>
+					<td>
+						<%= shipment.Supp_Delivery_Name %>
+					</td>
+					<td>
+						<%= shipment.Delivery_Date %>
+					</td>
+					<td>
+						<%= shipment.Delivery_Price %>
+					</td>
+					<td>
+						<%= shipment.Delivery_Amount %>
+					</td>
+				</tr>
+				<% }) %>
+			</tbody>
+		</table>
+	</div>
+
+</main>
