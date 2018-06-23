@@ -72,7 +72,7 @@ router.get('/prescription_tickets', function(req, res) {
 	res.render('pages/prescription_tickets', {tickets: pTicketTable});
 })
 
-const ticketContent = require('../public/js/pTicketContent.json');
+const ticketContent = require('../public/js/prescriptionTicketContains.json');
 
 router.get('/ptContent', function(req, res) {
 	res.render('pages/ptContent', {content: ticketContent})
