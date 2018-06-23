@@ -1,30 +1,48 @@
+<%- contentFor('css') %>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+
 <%- contentFor('scripts') %>
-<!--External JS Files-->
-<script src="/js/codeForSupplier.js"></script>
+<script src="//cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<script>
+    $(document).ready( function () {
+        $('#supp').DataTable();
+    } );
+</script>
 
 <%- contentFor('hero') %>
-
-<!--Actual start of html code-->
 <section class="hero">
     <div class="hero-content">
         <h2><span>Supplier Info</span></h2>
-        <p><span>Shows the Current Suppliers and their Info</span></p>
+        <p> <span>Info on suppliers</span></p>
     </div>
 </section>
-    
+
 <main>
-    <div class = "text-center">    
-        <button onclick="extractInfoA(), extractInfoB(), extractInfoC()" class="btn btn-lg btn-primary">Display Info</button>
+    <div style="padding-top: 40px">
+        <table id="supp" class="table table-striped table-border">
+            <thead>
+                <tr>
+                    <th>Supplier Name</th>
+                    <th>Location</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% supplierInfo.forEach(function (supp) { %>
+                <tr>
+                    <td>
+                        <%= supp.Supplier_Name %>
+                    </td>
+                    <td>
+                        <%= supp.Supplier_Location %>
+                    </td>
+                    <td>
+                        <%= supp.Supplier_Phone %>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
     </div>
-    <div class="container">
-        <div class="text-center">
-            <h1 align = "center">TYPE A</h1>
-            <h3 id="typea"></h3>
-            <h1 align = "center">TYPE B</h1>
-            <h3 id="typeb"></h3>
-            <h1 align = "center">TYPE C</h1>
-            <h3 id="typec"></h3>
-        </div>
-    </div>>
+
 </main>
-    

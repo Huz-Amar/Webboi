@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 
 
 
-// const supInfoTable // = require('../public/js/STUFF');
+const supInfoTable = require('../public/js/sInfo.json');
 
 router.get('/supplier_info', function(req, res) {
 	res.render('pages/supplier_info', {supplierInfo: supInfoTable});
