@@ -1,0 +1,17 @@
+[
+{
+	"Pharm_ID": 1000,
+	"Pharm_Name": "Aspirin",
+	"Pharm_Expiration_Date": "March 5, 2018",
+	"Sale_Price": 12.35,
+	"Description": "Head Ache Medicine, Dont give to people who bleed easily",
+	"Dosage": "Big"
+},
+{
+	"Pharm_ID": 1005,
+	"Pharm_Name": "Ceyklon B",
+	"Pharm_Expiration_Date": "June 1, 2022",
+	"Sale_Price": 11.34,
+	"Description": "Very dangerous",
+	"Dosage": "Small"
+}]
