@@ -1,46 +1,17 @@
 [
-	{
-		"clientID": 1010,
-		"name": "GeeGee",
-		"age": 19,
-		"weight": 150,
-		"address": "180 Wowza my Gowza",
-		"phone": "123-456-7890"
-	},
-
-	{
-		"clientID": 1011,
-		"name": "Gangster",
-		"age": 21,
-		"weight": 170,
-		"address": "180 Wowza my Gowza",
-		"phone": "403-wow-amazing"
-	},
-
-	{
-		"clientID": 1100,
-		"name": "Gvng",
-		"age": 21,
-		"weight": 200,
-		"address": "212 Chicken Snack",
-		"phone": "123-000-0000"
-	},
-
-	{
-		"clientID": 1101,
-		"name": "Goonk",
-		"age": 19,
-		"weight": 240,
-		"address": "131 Im wasting time",
-		"phone": "569-555-6969"
-	},
-
-	{
-		"clientID": 1110,
-		"name": "Save me",
-		"age": 13,
-		"weight": 90,
-		"address": "Help",
-		"phone": "We so close"
-	}
-]
+{
+	"name": "Joseph Smith",
+	"clientID": 0,
+	"age": 45,
+	"weight": "124.32",
+	"address": "53 saddletree close",
+	"phone": 40353
+},
+{
+	"name": "Baby Smith",
+	"clientID": 1,
+	"age": 10,
+	"weight": "12.3",
+	"address": "53 saddletree close",
+	"phone": 0
+}]
