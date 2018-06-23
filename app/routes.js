@@ -24,6 +24,11 @@ router.get('/createTicket', function(req, res) {
 
 
 
+router.get('/placeOrder', function(req, res) {
+	res.render('pages/placeOrder');
+})
+
+
 const inv = require('../public/js/inventoryItems.json');
 
 router.get('/inventory', function(req, res) {
