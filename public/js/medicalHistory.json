@@ -1,0 +1,15 @@
+[
+{
+	"C_ID": 0,
+	"Condition_Name": "Aspergers Syndrome",
+	"Condition_Type": "Physical",
+	"Date_of_Diagonosis": "June 1 , 1923",
+	"Cause": "Old Age/Natural"
+},
+{
+	"C_ID": 1,
+	"Condition_Name": "Depression",
+	"Condition_Type": "Mental",
+	"Date_of_Diagonosis": "June 1, 1977",
+	"Cause": "Chemical Imbalance"
+}]
