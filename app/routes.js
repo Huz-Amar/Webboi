@@ -40,6 +40,18 @@ router.get('/client_list', function(req, res) {
 	res.render('pages/client_list', {clients: cTable});
 })
 
+const pHTable = require('../public/js/prescriptionHistory.json');
+
+router.get('/pHistory', function(req, res) {
+	res.render('pages/pHistory', {pHist: pHTable})
+})
+
+const mHTable = require('../public/js/medicalHistory.json');
+
+router.get('/mHistory', function(req, res) {
+	res.render('pages/mHistory', {mHist: mHTable})
+})
+
 
 
 // temp wip stuff
@@ -60,18 +72,10 @@ router.get('/prescription_tickets', function(req, res) {
 	res.render('pages/prescription_tickets', {tickets: pTicketTable});
 })
 
+const ticketContent = require('../public/js/pTicketContent.json');
 
-
-const pHTable = require('../public/js/prescriptionHistory.json');
-
-router.get('/pHistory', function(req, res) {
-	res.render('pages/pHistory', {pHist: pHTable})
-})
-
-const mHTable = require('../public/js/medicalHistory.json');
-
-router.get('/mHistory', function(req, res) {
-	res.render('pages/mHistory', {mHist: mHTable})
+router.get('/ptContent', function(req, res) {
+	res.render('pages/ptContent', {content: ticketContent})
 })
 
 
