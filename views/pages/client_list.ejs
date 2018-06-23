@@ -32,6 +32,7 @@
 					<th>Client ID</th>
 					<th>Name</th>
 					<th>Age</th>
+					<th>Sex</th>
 					<th>Weight</th>
 					<th>Address</th>
 					<th>Phone</th>
@@ -41,27 +42,30 @@
 				<% clients.forEach(function (c) { %>
 				<tr>
 					<td>
-						<%= c.clientID %>
+						<%= c.Client_ID %>
 					</td>
 					<td>
-						<%= c.name %>
+						<%= c.Client_Name %>
 					</td>
 					<td>
-						<%= c.age %>
+						<%= c.Age %>
 					</td>
 					<td>
-						<%= c.weight %>
+						<%= c.Sex %>
 					</td>
 					<td>
-						<%= c.address %>
+						<%= c.Weight %>
 					</td>
 					<td>
-						<%= c.phone %>
+						<%= c.Address %>
+					</td>
+					<td>
+						<%= c.Phone %>
 					</td>
 				</tr>
 				<% }) %>
 			</tbody>
 		</table>
 	</div>
-	
+
 </main>
