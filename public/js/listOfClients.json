@@ -1,6 +1,6 @@
 [
 {
-	"C_ID": 0,
+	"Client_ID": 0,
 	"Client_Name": "Joseph Smith",
 	"Age": 45,
 	"Sex": "M",
@@ -9,9 +9,10 @@
 	"Phone": 40353
 },
 {
-	"C_ID": 1,
+	"Client_ID": 1,
 	"Client_Name": "Baby Smith",
 	"Age": 10,
+	"Sex": "M",
 	"Weight": "12.3",
 	"Address": "53 saddletree close",
 	"Phone": 0
