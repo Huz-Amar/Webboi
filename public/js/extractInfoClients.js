@@ -19,7 +19,7 @@ connection.query(sql, function (err, result){
     var stringboi = "[\n"
     var lasti = result.length-1;
     for (var i=0; i<result.length-1; i++){
-        stringboi += JSON.stringify({C_ID: result[i].CLIENT_ID, Client_Name: result[i].CLIENT_NAME, Age: result[i].AGE, Sex: result[i].Sex, Weight: result[i].WEIGHT, Address: result[i].ADDRESS, Phone: result[i].PHONE}, null, "\t");
+        stringboi += JSON.stringify({C_ID: result[i].CLIENT_ID, Client_Name: result[i].CLIENT_NAME, Age: result[i].AGE, Sex: result[i].SEX, Weight: result[i].WEIGHT, Address: result[i].ADDRESS, Phone: result[i].PHONE}, null, "\t");
         stringboi += ",\n";
     }
     stringboi += JSON.stringify({C_ID: result[lasti].CLIENT_ID, Client_Name: result[lasti].CLIENT_NAME, Age: result[lasti].AGE, Sex: result[lasti].Sex, Weight: result[lasti].WEIGHT, Address: result[lasti].ADDRESS, Phone: result[lasti].PHONE}, null, "\t");

@@ -3,6 +3,7 @@
 	"C_ID": 0,
 	"Client_Name": "Joseph Smith",
 	"Age": 45,
+	"Sex": "M",
 	"Weight": "124.32",
 	"Address": "53 saddletree close",
 	"Phone": 40353
