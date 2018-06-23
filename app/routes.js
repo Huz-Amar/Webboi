@@ -35,6 +35,9 @@ router.get('/pharmaceutical', function(req, res){
 	res.render('pages/pharmaceutical', {drugs: pharms})
 })
 
+
+
+
 /*const cHistoryTable // = require('../public/js/STUFF');*/
 
 router.get('/customer_history', function(req, res) {
