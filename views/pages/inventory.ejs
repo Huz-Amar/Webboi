@@ -11,20 +11,6 @@
 	window.onload = writeName;
 </script>
 
-<script>
-    function extractInfo(){
-        var access_level = getAccessLevel();
-        if (access_level.equals("B") == true){
-            extractInfoA();
-            extractInfoB();
-            extractInfoC();
-        }
-        else {
-            extractInfoA();
-            extractInfoC();
-        }
-    }
-</script>
 
 <%- contentFor('hero') %>
 
@@ -38,7 +24,7 @@
     
 <main>
     <div class = "text-center">    
-        <button onclick="extractInfo()" class="btn btn-lg btn-primary">Display Info</button>
+        <button onclick="extractInfoA(), extractInfoB(), extractInfoC()" class="btn btn-lg btn-primary">Display Info</button>
         <!--<p align="center"></br>Here we will display information of current selected type a pharmacutical</br></br></p>-->
     </div>
     <div class="container">

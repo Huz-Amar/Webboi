@@ -1,7 +1,7 @@
 [
 {
-	"NAME": "John Doe",
-	"EMPLOYEE_ID": 1,
-	"ACCESS_LEVEL": "A",
-	"SUPERVISOR_ID": 2
+	"Emp_Name": "John Doe",
+	"Employee_ID": 1,
+	"Access_Level": "A",
+	"Super_ID": 2
 }]

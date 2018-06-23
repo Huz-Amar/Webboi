@@ -19,12 +19,12 @@ connection.connect();
     var stringboi = "[\n"
     var lasti = result.length-1;
     for (var i=0; i<result.length-1; i++){
-        stringboi += JSON.stringify({NAME: result[i].NAME, EMPLOYEE_ID: result[i].EMPLOYEE_ID, 
-            ACCESS_LEVEL: result[i].ACCESS_LEVEL, SUPERVISOR_ID: result[i].SUPER_ID}, null, "\t");
+        stringboi += JSON.stringify({Emp_Name: result[i].NAME, Employee_ID: result[i].EMPLOYEE_ID, 
+            Access_Level: result[i].ACCESS_LEVEL, Super_ID: result[i].SUPER_ID}, null, "\t");
         stringboi += ",\n";
     }
-    stringboi += JSON.stringify({NAME: result[lasti].NAME, EMPLOYEE_ID: result[lasti].EMPLOYEE_ID, 
-        ACCESS_LEVEL: result[lasti].ACCESS_LEVEL, SUPERVISOR_ID: result[lasti].SUPER_ID}, null, "\t");
+    stringboi += JSON.stringify({Emp_Name: result[lasti].NAME, Employee_ID: result[lasti].EMPLOYEE_ID, 
+        Access_Level: result[lasti].ACCESS_LEVEL, Super_ID: result[lasti].SUPER_ID}, null, "\t");
     stringboi += "]";
     fs.writeFile("listOfEmployees.json", stringboi, finished);
     function finished(err){
