@@ -12,21 +12,22 @@ router.get('/', function(req, res) {
 
 
 
-// NEED TABLE
+const supInfoTable // = require('../public/js/STUFF');
+
 router.get('/supplier_info', function(req, res) {
-	res.render('pages/supplier_info');
+	res.render('pages/supplier_info', {supplierInfo: supInfoTable});
 })
 
 
 
-// NEED TABLE
 router.get('/inventory', function(req, res) {
 	res.render('pages/inventory');
 })
 
 
 
-// NEED TABLE
+const cHistoryTable // = require('../public/js/STUFF');
+
 router.get('/customer_history', function(req, res) {
 	res.render('pages/customer_history');
 })
@@ -53,9 +54,10 @@ router.get('/employees', function(req, res) {
 
 
 
-// NEED TABLE
+const pTicketTable // = require('../public/js/STUFF');
+
 router.get('/prescription_tickets', function(req, res) {
-	res.render('pages/prescription_tickets');
+	res.render('pages/prescription_tickets', {tickets: pTicketTable});
 })
 
 
