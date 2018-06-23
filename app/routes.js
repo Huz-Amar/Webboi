@@ -20,6 +20,12 @@ router.get('/supplier_info', function(req, res) {
 
 
 
+router.get('/createTicket', function(req, res) {
+	res.render('pages/createTicket');
+})
+
+
+
 const inv = require('../public/js/inventoryItems.json');
 
 router.get('/inventory', function(req, res) {
