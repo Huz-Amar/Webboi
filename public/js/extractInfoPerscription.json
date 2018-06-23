@@ -1,8 +1,8 @@
 [
 {
-	"ticket_name": 9000,
-	"emp_id": 1,
-	"client_id": 2000,
-	"date_perscribed": "June 1, 1982",
-	"time_of_usage": "Midday, twice a day"
+	"Ticket_Number": 9000,
+	"Emp_ID": 1,
+	"C_ID": 2000,
+	"Ticket_Date_Prescribed": "June 1, 1982",
+	"Time_of_Usage": "Midday, twice a day"
 }]

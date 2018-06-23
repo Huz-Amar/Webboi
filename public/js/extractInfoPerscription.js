@@ -18,10 +18,10 @@ connection.query(sql, function (err, result){
     var stringboi = "[\n"
     var lasti = result.length-1;
     for (var i=0; i<result.length-1; i++){
-        stringboi += JSON.stringify({ticket_name: result[i].TICKET_NUMBER, emp_id: result[i].EMPLOYEE_ID, client_id: result[i].CLIENT_ID, date_perscribed: result[i].DATE_PERSCRIBED, time_of_usage: result[i].TIME_OF_USAGE}, null, "\t");
+        stringboi += JSON.stringify({Ticket_Number: result[i].TICKET_NUMBER, Emp_ID: result[i].EMPLOYEE_ID, C_ID: result[i].CLIENT_ID, Ticket_Date_Prescribed: result[i].DATE_PERSCRIBED, Time_of_Usage: result[i].TIME_OF_USAGE}, null, "\t");
         stringboi += ",\n";
     }
-    stringboi += JSON.stringify({ticket_name: result[lasti].TICKET_NUMBER, emp_id: result[lasti].EMPLOYEE_ID, client_id: result[lasti].CLIENT_ID, date_perscribed: result[lasti].DATE_PERSCRIBED, time_of_usage: result[lasti].TIME_OF_USAGE}, null, "\t");
+    stringboi += JSON.stringify({Ticket_Number: result[lasti].TICKET_NUMBER, Emp_ID: result[lasti].EMPLOYEE_ID, C_ID: result[lasti].CLIENT_ID, Ticket_Date_Prescribed: result[lasti].DATE_PERSCRIBED, Time_of_Usage: result[lasti].TIME_OF_USAGE}, null, "\t");
     stringboi += "]";
     fs.writeFile("extractInfoPerscription.json", stringboi, finished);
     function finished(err){
